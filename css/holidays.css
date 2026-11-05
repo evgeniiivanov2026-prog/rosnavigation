@@ -1,0 +1,6 @@
+/* Праздничные темы не включены сами. Атрибут data-holiday на body. */
+body[data-holiday="may9"] {
+  --brand-primary: #d52b1e;
+  --brand-primary-hover: #e24a3c;
+}
+body[data-holiday="may9"] .flagbar { height: 4px; }
