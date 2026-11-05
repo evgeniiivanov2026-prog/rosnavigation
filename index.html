@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090A0C">
+  <meta name="color-scheme" content="dark">
+  <meta name="format-detection" content="telephone=no">
+  <title>РосНавигация — сеть для дальнобойщиков. Своих не бросаем.</title>
+  <meta name="description" content="Навигация для фур, взаимопомощь и сообщество дальнобойщиков России и СНГ. Отчёты о дорогах, стоянках и АЗС от тех, кто только что проехал. Своих не бросаем.">
+  <link rel="canonical" href="https://rosnavigation.ru/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="РосНавигация">
+  <meta property="og:title" content="РосНавигация — сеть для дальнобойщиков">
+  <meta property="og:description" content="Навигация, взаимопомощь и братство на дорогах России. Своих не бросаем.">
+  <meta property="og:url" content="https://rosnavigation.ru/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <!-- Шрифты лежат рядом с сайтом: на трассе внешние CDN часто не открываются -->
+  <link rel="preload" href="fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <!--
+    Настройки площадки — правьте здесь, потом те же адреса в подвале и кнопках.
+    Форум:  https://forum.rosnavigation.ru
+    Почта:  info@rosnavigation.ru  (атрибут data-email у body)
+    Заявка: data-endpoint у формы #signup.
+            Пусто — письмо откроется в почте.
+            Formspree: https://formspree.io/f/xxxxxxxx
+    Разделы форума: structure.md
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "РосНавигация",
+    "url": "https://rosnavigation.ru",
+    "slogan": "Своих не бросаем",
+    "email": "info@rosnavigation.ru",
+    "areaServed": ["RU", "BY", "KZ", "AM", "KG", "UZ"]
+  }
+  </script>
+</head>
+<body data-email="info@rosnavigation.ru" data-forum="https://forum.rosnavigation.ru">
+  <a class="skip" href="#main">К содержанию</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container header__bar">
+      <a class="logo" href="#top" aria-label="РосНавигация, наверх">
+        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#14120E" stroke="#FF9A1F" stroke-width="1.5"/>
+          <path d="M10 25 L16 8 L22 25" fill="none" stroke="#FF9A1F" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M16 13.5 V21" stroke="#F4F1EA" stroke-width="1.4" stroke-dasharray="1.6 2.1" stroke-linecap="round"/>
+        </svg>
+        <span class="logo__word">РосНавигация</span>
+      </a>
+
+      <!-- Меню на чекбоксе: открывается и без JavaScript -->
+      <input class="nav-check" id="nav-toggle" type="checkbox">
+      <label class="nav-toggle" for="nav-toggle">
+        <span class="visually-hidden">Открыть меню</span>
+        <span class="burger" aria-hidden="true"><span></span><span></span><span></span></span>
+      </label>
+
+      <nav class="nav-panel" aria-label="Основная">
+        <a href="#about">О проекте</a>
+        <a href="#features">Возможности</a>
+        <a href="#community">Сообщество</a>
+        <a href="#rules">Правила</a>
+        <a href="#contacts">Контакты</a>
+        <a class="btn btn--primary btn--menu" href="https://forum.rosnavigation.ru">Вступить в сообщество</a>
+      </nav>
+
+      <a class="btn btn--primary btn--header" href="https://forum.rosnavigation.ru">
+        Вступить<span class="btn__rest"> в сообщество</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__row">
+          <div class="hero__copy">
+            <p class="kicker"><span>Россия и СНГ</span> Ночной рейс</p>
+            <h1>РосНавигация —<br> сеть для дальнобойщиков</h1>
+            <p class="lede">Навигация, взаимопомощь и братство на дорогах России. Своих не бросаем.</p>
+            <div class="actions">
+              <a class="btn btn--primary" href="https://forum.rosnavigation.ru">Вступить в сообщество</a>
+              <a class="btn btn--ghost" href="#about">Узнать больше</a>
+            </div>
+            <ul class="facts">
+              <li><strong>Россия и СНГ</strong><span>география сети</span></li>
+              <li><strong>24/7</strong><span>трасса не спит</span></li>
+              <li><strong>Репутация</strong><span>вместо анонимов</span></li>
+            </ul>
+          </div>
+
+          <!-- Ночная фура сзади: декорация, смысл несёт заголовок -->
+          <div class="stage" aria-hidden="true">
+            <div class="stage__sky"></div>
+            <div class="stage__road"><div class="stage__dashes"></div></div>
+            <svg class="stage__truck" viewBox="0 0 440 300">
+              <defs>
+                <filter id="lamp" x="-40%" y="-80%" width="180%" height="260%">
+                  <feGaussianBlur stdDeviation="3.2" result="blur"/>
+                  <feMerge>
+                    <feMergeNode in="blur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              <ellipse cx="220" cy="286" rx="150" ry="8" fill="#000" opacity=".45"/>
+              <rect x="114" y="20" width="212" height="4" rx="2" fill="#3A3328"/>
+              <circle cx="124" cy="18" r="5" fill="#FF9A1F"/>
+              <circle cx="220" cy="14" r="5" fill="#FFC857"/>
+              <circle cx="316" cy="18" r="5" fill="#FF9A1F"/>
+              <rect x="96" y="30" width="248" height="158" rx="6" fill="#171B21" stroke="#FF9A1F" stroke-width="2.5"/>
+              <path d="M220 30 V188" stroke="#2C333C" stroke-width="2"/>
+              <path d="M112 82 H328 M112 124 H328" stroke="#2C333C" stroke-width="2"/>
+              <rect x="112" y="158" width="216" height="12" fill="#FF9A1F"/>
+              <rect x="112" y="174" width="28" height="14" rx="2" fill="#FF3B30" filter="url(#lamp)"/>
+              <rect x="300" y="174" width="28" height="14" rx="2" fill="#FF3B30" filter="url(#lamp)"/>
+              <rect x="84" y="196" width="272" height="16" rx="3" fill="#0C0E12" stroke="#343A44"/>
+              <rect x="188" y="199" width="64" height="10" rx="1" fill="#2A261C"/>
+              <rect x="108" y="212" width="16" height="30" fill="#12151A"/>
+              <rect x="316" y="212" width="16" height="30" fill="#12151A"/>
+              <g fill="#07080A" stroke="#D5CFC3" stroke-width="3">
+                <circle cx="132" cy="252" r="32"/>
+                <circle cx="172" cy="252" r="32"/>
+                <circle cx="268" cy="252" r="32"/>
+                <circle cx="308" cy="252" r="32"/>
+              </g>
+              <g fill="#1C2128" stroke="#8E887C" stroke-width="2">
+                <circle cx="132" cy="252" r="10"/>
+                <circle cx="172" cy="252" r="10"/>
+                <circle cx="268" cy="252" r="10"/>
+                <circle cx="308" cy="252" r="10"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="tape" aria-hidden="true"></div>
+
+    <div class="marquee">
+      <p class="visually-hidden">Трассы и темы сети: М-4 Дон, М-5 Урал, М-7 Волга, М-11 Нева, М-12 Восток, стоянки, АЗС, SOS, репутация. Своих не бросаем.</p>
+      <div class="marquee__track" aria-hidden="true">
+        <p class="marquee__row">
+          <span>М-4 «Дон»</span>
+          <span>М-5 «Урал»</span>
+          <span>М-7 «Волга»</span>
+          <span>М-11 «Нева»</span>
+          <span>М-12 «Восток»</span>
+          <span>Стоянки</span>
+          <span>АЗС</span>
+          <span>SOS</span>
+          <span>Репутация</span>
+          <span>Своих не бросаем</span>
+        </p>
+        <p class="marquee__row">
+          <span>М-4 «Дон»</span>
+          <span>М-5 «Урал»</span>
+          <span>М-7 «Волга»</span>
+          <span>М-11 «Нева»</span>
+          <span>М-12 «Восток»</span>
+          <span>Стоянки</span>
+          <span>АЗС</span>
+          <span>SOS</span>
+          <span>Репутация</span>
+          <span>Своих не бросаем</span>
+        </p>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="container about__grid">
+        <header class="section-head">
+          <p class="kicker"><span>01</span> Дорога</p>
+          <h2>На трассе нельзя остаться одному</h2>
+          <p class="lede">Карты рисуют маршрут для легковушки. Чаты полнятся чужими. Когда машина встаёт на обочине, нужна не лента — нужны свои.</p>
+        </header>
+        <div class="pain">
+          <article>
+            <p class="pain__n">01</p>
+            <div>
+              <h3>Карты не знают фуру</h3>
+              <p>Высота моста, вес, рамка, запрет на въезд. В обычной навигации это либо врёт, либо молчит.</p>
+            </div>
+          </article>
+          <article>
+            <p class="pain__n">02</p>
+            <div>
+              <h3>Один на тысячу километров</h3>
+              <p>Связь есть, а своих рядом нет. Пока ищете, кому написать, рейс уже стоит.</p>
+            </div>
+          </article>
+          <article>
+            <p class="pain__n">03</p>
+            <div>
+              <h3>Помощь, которая не приезжает</h3>
+              <p>Совет в общем чате не поднимет кабину и не привезёт запаску. Нужен человек, который действительно рядом.</p>
+            </div>
+          </article>
+          <article>
+            <p class="pain__n">04</p>
+            <div>
+              <h3>Мошенники говорят громче</h3>
+              <p>Липовые грузы, предоплата «диспетчеру», слитые номера. В анонимном чате некого спросить.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="features">
+      <div class="container">
+        <header class="section-head section-head--wide reveal">
+          <p class="kicker"><span>02</span> Сеть</p>
+          <h2>Что мы даём на линии</h2>
+          <p class="lede">Не ещё один чат. Навигация, помощь и репутация — там, где человека знают по делам, а не по нику.</p>
+        </header>
+
+        <div class="bento">
+          <article class="card card--nav reveal">
+            <p class="badge">Для фуры</p>
+            <h3>Специализированная навигация</h3>
+            <p>Маршруты с учётом габарита, веса, мостов и ограничений. Дорога, по которой фура действительно пройдёт.</p>
+            <svg class="route-map" viewBox="0 0 360 190" aria-hidden="true">
+              <path d="M16 150 C 90 150, 120 78, 168 78" fill="none" stroke="#3A424C" stroke-width="10" stroke-linecap="round"/>
+              <path d="M16 150 C 70 158, 150 150, 250 46" fill="none" stroke="#FF9A1F" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="16" cy="150" r="5" fill="#F4F1EA"/>
+              <circle cx="250" cy="46" r="5" fill="#FF9A1F"/>
+              <rect x="168" y="58" width="78" height="40" rx="6" fill="#12151A" stroke="#FF5A45"/>
+              <text x="207" y="76" text-anchor="middle" fill="#FFB4A8" font-size="11" font-family="Manrope, sans-serif">мост 4,2 м</text>
+              <text x="207" y="90" text-anchor="middle" fill="#8E887C" font-size="10" font-family="Manrope, sans-serif">не пройдёт</text>
+              <text x="168" y="168" fill="#FFC857" font-size="12" font-family="Manrope, sans-serif">объезд для фуры</text>
+            </svg>
+          </article>
+
+          <article class="card card--sos reveal">
+            <p class="sos-mark">SOS</p>
+            <h3>Система взаимопомощи</h3>
+            <p>Сигнал своим: где вы стоите и что случилось. Кто рядом — видит и может откликнуться.</p>
+          </article>
+
+          <article class="card reveal">
+            <p class="badge">Доверие</p>
+            <h3>Живое сообщество с репутацией</h3>
+            <p>Профиль копит поступки, а не лайки. По нему видно, кому можно открыть дверь кабины.</p>
+            <div class="rep" aria-hidden="true">
+              <span class="rep__bar"></span>
+              <span class="rep__label">растёт с делом, не с регистрации</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <h3>Отчёты с дороги</h3>
+              <p class="badge">Образец</p>
+            </div>
+            <p>Стоянки, АЗС, ямы, посты и перекрытия — от тех, кто проехал только что, а не из прошлогодней статьи.</p>
+            <div class="slip" aria-hidden="true">
+              <div class="slip__top"><span>М-5 · юг</span><span>форма отчёта</span></div>
+              <p>Рамка у поста, хвост около 40&nbsp;минут. Фура встаёт за АЗС.</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <h3>Защита от мошенников</h3>
+            <p>Правила, модерация и репутация. Анонимный развод здесь не чувствует себя как дома.</p>
+            <ul class="ban">
+              <li>Предоплата незнакомцу</li>
+              <li>Липовый груз</li>
+              <li>Слив номеров</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <header class="section-head section-head--wide reveal">
+          <p class="kicker"><span>03</span> Маршрут</p>
+          <h2>Как это работает</h2>
+          <p class="lede">Четыре шага. Без анкеты на десять экранов и без обещаний, которые нельзя проверить.</p>
+        </header>
+        <ol class="steps">
+          <li class="reveal">
+            <span class="steps__n">01</span>
+            <h3>Регистрация</h3>
+            <p>Имя, контакт и коротко о машине. Чтобы свои понимали, кто выходит на связь.</p>
+          </li>
+          <li class="reveal">
+            <span class="steps__n">02</span>
+            <h3>Профиль и репутация</h3>
+            <p>Вас узнают по помощи, отчётам и слову. Пустой ник на трассе ничего не весит.</p>
+          </li>
+          <li class="reveal">
+            <span class="steps__n">03</span>
+            <h3>Навигация и помощь</h3>
+            <p>Строите маршрут, читаете отчёты, зовёте своих, если встали. И откликаетесь, когда можете.</p>
+          </li>
+          <li class="reveal">
+            <span class="steps__n">04</span>
+            <h3>Участие в сообществе</h3>
+            <p>Делитесь стоянкой, АЗС и тяжёлым участком. Братство держится на тех, кто пишет правду.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="motto" aria-label="Девиз">
+      <div class="container reveal">
+        <p class="kicker"><span>Договорённость</span></p>
+        <p class="motto__line">Своих не бросаем.</p>
+        <p class="motto__sub">Не строчка для майки. Ответ, когда на обочине гаснут габариты.</p>
+      </div>
+    </section>
+
+    <section class="section band" id="community">
+      <div class="container community">
+        <div class="reveal">
+          <header class="section-head">
+            <p class="kicker"><span>04</span> Форум</p>
+            <h2>Разговор по делу, не лента</h2>
+            <p class="lede">Форум живёт отдельно, на движке XenForo. Тема не тонет через час: к ней можно вернуться в следующем рейсе.</p>
+          </header>
+          <div class="actions">
+            <a class="btn btn--primary" href="https://forum.rosnavigation.ru">Перейти на форум</a>
+            <a class="btn btn--ghost" href="#join">Оставить заявку</a>
+          </div>
+          <p class="fine">Площадка: forum.rosnavigation.ru</p>
+        </div>
+
+        <div class="board reveal">
+          <div class="board__bar">
+            <span class="board__live" aria-hidden="true"></span>
+            <span>Форум · XenForo</span>
+          </div>
+          <ul class="board__list">
+            <li>
+              <a class="board__link" href="https://forum.rosnavigation.ru">
+                <span class="board__name">Помощь на дороге</span>
+                <span class="board__desc">Срочно, техпомощь, кто рядом</span>
+                <span class="board__go" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="board__link" href="https://forum.rosnavigation.ru">
+                <span class="board__name">Отчёты о дорогах</span>
+                <span class="board__desc">Перекрытия, рамки, посты, погода</span>
+                <span class="board__go" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="board__link" href="https://forum.rosnavigation.ru">
+                <span class="board__name">Стоянки и АЗС</span>
+                <span class="board__desc">Ночёвка, душ, цена, влезет ли фура</span>
+                <span class="board__go" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="board__link" href="https://forum.rosnavigation.ru">
+                <span class="board__name">Общение</span>
+                <span class="board__desc">Свои, без базара и рекламной помойки</span>
+                <span class="board__go" aria-hidden="true">→</span>
+              </a>
+            </li>
+            <li>
+              <a class="board__link" href="https://forum.rosnavigation.ru">
+                <span class="board__name">Логистика</span>
+                <span class="board__desc">Направления и документы, без серых схем</span>
+                <span class="board__go" aria-hidden="true">→</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rules">
+      <div class="container">
+        <header class="section-head section-head--wide reveal">
+          <p class="kicker"><span>05</span> Устав</p>
+          <h2>Короткие правила</h2>
+          <p class="lede">Их мало. Нарушать незачем: на трассе и так хватает чужих.</p>
+        </header>
+        <ol class="charter">
+          <li class="reveal">
+            <h3>Честность</h3>
+            <p>Пишите, как есть: где стоите, что видели, чем можете помочь. Приукрашенный отчёт опаснее молчания.</p>
+          </li>
+          <li class="reveal">
+            <h3>Взаимопомощь</h3>
+            <p>Можете подъехать — напишите. Не можете — не кормите человека пустым «уже еду».</p>
+          </li>
+          <li class="reveal">
+            <h3>Запрет мошенничества</h3>
+            <p>Фейковые грузы, предоплата незнакомцу, выманивание документов и номеров. За это — бан, без дискуссии.</p>
+          </li>
+          <li class="reveal">
+            <h3>Запрет спама</h3>
+            <p>Реклама, флуд и чужие ссылки не стоят рядом с просьбой о помощи.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section band" id="faq">
+      <div class="container faq-wrap">
+        <header class="section-head reveal">
+          <p class="kicker"><span>06</span> Вопросы</p>
+          <h2>Спрашивают до того, как выйти на связь</h2>
+        </header>
+        <div class="faq">
+          <details class="reveal">
+            <summary>Что такое РосНавигация?</summary>
+            <p>Сеть и сообщество дальнобойщиков России и СНГ. Навигация для фур, отчёты с дороги и взаимопомощь. Девиз один: своих не бросаем.</p>
+          </details>
+          <details class="reveal">
+            <summary>Это приложение или форум?</summary>
+            <p>Сейчас основа — сайт и форум. На rosnavigation.ru — о сети и предварительная запись. На forum.rosnavigation.ru — сам разговор: помощь, отчёты, стоянки, логистика. Навигация развивается как часть сети, а не как отдельный чат в телефоне.</p>
+          </details>
+          <details class="reveal">
+            <summary>Как помочь другому водителю?</summary>
+            <p>Откройте раздел «Помощь на дороге». Если вы рядом и правда можете — откликнитесь и напишите, чем поможете: время, инструмент, буксир, компания до сервиса. Не обещайте того, чего не сделаете.</p>
+          </details>
+          <details class="reveal">
+            <summary>Это бесплатно?</summary>
+            <p>Вступить в сообщество и пользоваться основными разделами форума можно бесплатно. Если позже появится платный инструмент, об этом скажут прямо — до оплаты, а не в сноске.</p>
+          </details>
+          <details class="reveal">
+            <summary>Как здесь защищаются от мошенников?</summary>
+            <p>Регистрация, репутация и модерация. Просьбы «переведи предоплату» и анонимные диспетчеры не считаются нормой. Сомневаетесь — спросите раздел до того, как что-то отправлять.</p>
+          </details>
+          <details class="reveal">
+            <summary>Кому можно вступать?</summary>
+            <p>Водителям и тем, кто работает на перевозках по России и СНГ. Новичок на линии — тоже свой, если говорит честно и готов помочь, когда сможет.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section join" id="join">
+      <div class="container join__grid">
+        <header class="section-head reveal">
+          <p class="kicker"><span>07</span> Заявка</p>
+          <h2>Предварительная запись</h2>
+          <p class="lede">Оставьте имя и телефон или Telegram. Напишем, когда нужно выйти на связь, и не будем слать пустую рассылку.</p>
+          <p class="fine">Форум по-прежнему открывается отдельно: кнопка «Вступить в сообщество» ведёт на forum.rosnavigation.ru.</p>
+        </header>
+
+        <!--
+          data-endpoint пустой: заявка собирается на устройстве и открывается в почте.
+          Чтобы ушло на Formspree, вставьте URL: data-endpoint="https://formspree.io/f/xxxxxxxx"
+        -->
+        <form class="signup reveal" id="signup" action="mailto:info@rosnavigation.ru" method="post" enctype="text/plain" data-endpoint="">
+          <p class="form-summary" role="alert" hidden></p>
+
+          <div class="field">
+            <label for="person-name">Имя</label>
+            <input id="person-name" name="name" type="text" required maxlength="60" autocomplete="name" autocapitalize="words" placeholder="Как к вам обращаться" aria-describedby="person-name-error">
+            <p class="field__error" id="person-name-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="person-contact">Телефон или Telegram</label>
+            <input id="person-contact" name="contact" type="text" required maxlength="80" autocomplete="tel" inputmode="text" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="+7 900 000-00-00 или @username" aria-describedby="person-contact-error">
+            <p class="field__error" id="person-contact-error"></p>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="company-website">Сайт</label>
+            <input id="company-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="consent">
+            <input id="person-consent" name="consent" type="checkbox" required aria-describedby="person-consent-error">
+            <span>Соглашаюсь на связь по этой заявке. Без рассылки и без передачи номера третьим лицам.</span>
+          </label>
+          <p class="field__error consent-error" id="person-consent-error"></p>
+
+          <div class="form-actions">
+            <button class="btn btn--primary" type="submit">Оставить заявку</button>
+          </div>
+          <p class="form-note">Пока сервис формы не подключён, письмо откроется в вашей почте на info@rosnavigation.ru. Текст заявки остаётся у вас на устройстве.</p>
+
+          <div class="form-success" hidden>
+            <p class="form-success__title">Заявка собрана</p>
+            <p class="form-success__detail"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacts">
+    <div class="container footer__grid">
+      <div>
+        <a class="logo" href="#top" aria-label="РосНавигация, наверх">
+          <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="#14120E" stroke="#FF9A1F" stroke-width="1.5"/>
+            <path d="M10 25 L16 8 L22 25" fill="none" stroke="#FF9A1F" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="M16 13.5 V21" stroke="#F4F1EA" stroke-width="1.4" stroke-dasharray="1.6 2.1" stroke-linecap="round"/>
+          </svg>
+          <span class="logo__word">РосНавигация</span>
+        </a>
+        <p class="footer__lead">Сеть для дальнобойщиков России и СНГ. Своих не бросаем.</p>
+      </div>
+
+      <nav aria-label="Разделы страницы">
+        <p class="footer__title">На странице</p>
+        <a href="#about">О проекте</a>
+        <a href="#features">Возможности</a>
+        <a href="#how">Как это работает</a>
+        <a href="#community">Сообщество</a>
+        <a href="#rules">Правила</a>
+        <a href="#faq">Вопросы</a>
+        <a href="#join">Запись</a>
+      </nav>
+
+      <div>
+        <p class="footer__title">Контакты</p>
+        <a href="https://forum.rosnavigation.ru">forum.rosnavigation.ru</a>
+        <a href="mailto:info@rosnavigation.ru">info@rosnavigation.ru</a>
+        <a href="#join">Предварительная запись</a>
+      </div>
+    </div>
+    <div class="container footer__bar">
+      <p>© <span id="year">2026</span> РосНавигация</p>
+      <a href="https://forum.rosnavigation.ru">Форум</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
