@@ -1,0 +1,4 @@
+<FilesMatch "\.ph(p|ar)$">
+    Require all denied
+</FilesMatch>
+Options -ExecCGI -Indexes

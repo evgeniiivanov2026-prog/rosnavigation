@@ -1,0 +1,19 @@
+{
+  "name": "РосНавигация",
+  "short_name": "РосНав",
+  "description": "Всероссийская сеть взаимовыручки дальнобойщиков. На 15-м — свои.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0A0E13",
+  "theme_color": "#0A0E13",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

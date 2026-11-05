@@ -1,2 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /inc/
+Disallow: /uploads/avatars/
+Disallow: /storage/
+Disallow: /cron/
+Disallow: /tests/
+
+Sitemap: https://rosnavigation.ru/sitemap.xml
