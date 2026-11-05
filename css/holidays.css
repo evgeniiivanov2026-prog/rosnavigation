@@ -1,0 +1,11 @@
+/* 9 мая: георгиевская лента вместо триколора в трёх пикселях шапки. */
+body.holiday-victory .flagline span:nth-child(1),
+body.holiday-victory .flagline span:nth-child(3) { background: #f0a202; }
+body.holiday-victory .flagline span:nth-child(2) { background: #161616; }
+
+body.holiday-victory .site-footer .footer__bar::after {
+  content: "Помним тех, кто не вернулся с дороги войны.";
+  flex: 1 1 100%;
+  color: var(--text-muted);
+  font-size: 14px;
+}

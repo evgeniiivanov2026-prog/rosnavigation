@@ -1,0 +1,13 @@
+inc/config.php
+.env.php
+storage/demo/*.json
+storage/cache/*
+storage/logs/*
+storage/backups/*
+!storage/**/.gitkeep
+uploads/avatars/*
+uploads/cars/*
+uploads/channel/*
+!uploads/**/.gitkeep
+!uploads/**/.htaccess
+.DS_Store
